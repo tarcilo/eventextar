@@ -1,6 +1,8 @@
 # Django settings for eventex project.
 from unipath import Path
 PROJECT_DIR = Path(__file__).parent
+import dj_database_url
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -24,9 +26,8 @@ MANAGERS = ADMINS
 #}
 
 DATABASES = {
-   'default': dj_database.url.config (
-       default='sqlite:///' + PROJECT_DIR.child('database.db'))
-   }
+    'default': dj_database_url.config(
+        default='sqlite:///' + PROJECT_DIR.child('database.db'))
 }
 
 
